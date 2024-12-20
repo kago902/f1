@@ -29,36 +29,45 @@ public class MainActivity extends AppCompatActivity {
 
         // Xử lý sự kiện nhấn nút OK
         Button okButton = findViewById(R.id.btnOK); // Đảm bảo nút OK có id là "btnOK"
-        okButton.setOnClickListener(v -> {
-            // Chuyển sang màn hình FeaturedActivity
-            Intent intent = new Intent(MainActivity.this, FeaturedActivity.class);
-            startActivity(intent);
-        });
+        okButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Chuyển sang màn hình FeaturedActivity
+                Intent intent = new Intent(MainActivity.this, FeaturedActivity.class);
+                startActivity(intent);
+            }
+        } );
 
         // Tìm các nút Buy và Sell
         Button buttonBuy = findViewById(R.id.buttonBuy);
         Button buttonSell = findViewById(R.id.buttonSell);
 
         // Xử lý sự kiện nhấn nút Buy
-        buttonBuy.setOnClickListener(v -> {
-            // Đổi màu nền nút Buy sang màu xanh
-            buttonBuy.setBackgroundColor(Color.parseColor("#4CAF50")); // Màu xanh lá
-            buttonBuy.setTextColor(Color.WHITE);
+        buttonBuy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Đổi màu nền nút Buy sang màu xanh
+                buttonBuy.setBackgroundColor(Color.parseColor("#4CAF50")); // Màu xanh lá
+                buttonBuy.setTextColor(Color.WHITE);
 
-            // Khôi phục màu của nút Sell (nếu cần)
-            buttonSell.setBackgroundColor(Color.parseColor("#E0E0E0")); // Màu xám nhạt
-            buttonSell.setTextColor(Color.BLACK);
+                // Khôi phục màu của nút Sell (nếu cần)
+                buttonSell.setBackgroundColor(Color.parseColor("#E0E0E0")); // Màu xám nhạt
+                buttonSell.setTextColor(Color.BLACK);
+            }
         });
 
         // Xử lý sự kiện nhấn nút Sell
-        buttonSell.setOnClickListener(v -> {
-            // Đổi màu nền nút Sell sang màu xanh
-            buttonSell.setBackgroundColor(Color.parseColor("#4CAF50")); // Màu xanh lá
-            buttonSell.setTextColor(Color.WHITE);
+        buttonSell.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Đổi màu nền nút Sell sang màu xanh
+                buttonSell.setBackgroundColor(Color.parseColor("#4CAF50")); // Màu xanh lá
+                buttonSell.setTextColor(Color.WHITE);
 
-            // Khôi phục màu của nút Buy (nếu cần)
-            buttonBuy.setBackgroundColor(Color.parseColor("#E0E0E0")); // Màu xám nhạt
-            buttonBuy.setTextColor(Color.BLACK);
+                // Khôi phục màu của nút Buy (nếu cần)
+                buttonBuy.setBackgroundColor(Color.parseColor("#E0E0E0")); // Màu xám nhạt
+                buttonBuy.setTextColor(Color.BLACK);
+            }
         });
     }
 }
